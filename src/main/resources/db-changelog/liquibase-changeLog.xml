@@ -1,0 +1,20 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+
+    <changeSet author="sh.badiei" id="1400-0311-1-activate-uuid">
+        <sql>
+            CREATE EXTENSION IF NOT EXISTS "uuid-ossp"
+        </sql>
+    </changeSet>
+    <changeSet author="sh.badiei" id="1400-0311-2-create-messagelog-tbl">
+        <createTable schemaName="public" tableName="message_log">
+            <column name="id" type="uuid" defaultValue="uuid_generate_v4()"/>
+            <column name="store_datetime" type="timestamp"/>
+            <column name="payload" type="clob"/>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>

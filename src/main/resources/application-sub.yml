@@ -1,12 +1,14 @@
 spring:
   jpa:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
+    generate-ddl: false
   datasource:
     hikari:
       driver-class-name: org.postgresql.Driver
-      jdbc-url: jdbc:postgresql://192.168.25.5:5432/rabbitmq-pubsub
+      jdbc-url: jdbc:postgresql://127.0.0.1:5432/rabbitmq_pubsub
+      maximumPoolSize: 20
       username: postgres
-      password: root97
+      password: qq@33ML
   rabbitmq:
     listener:
       simple:

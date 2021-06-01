@@ -1,0 +1,19 @@
+version: '2.0'
+
+services:
+  rabbitmq:
+    container_name: rabbitmq
+    image: docker.io/bitnami/rabbitmq:3.8
+    ports:
+      - '5672:5672'
+      - '15672:15672'
+
+  postgres:
+    container_name: postgresql
+    image: bitnami/postgresql:12
+    environment:
+      - POSTGRESQL_USERNAME=postgres
+      - POSTGRESQL_PASSWORD=qq@33ML
+      - POSTGRESQL_DATABASE=rabbitmq_pubsub
+    ports:
+      - "5432:5432"
