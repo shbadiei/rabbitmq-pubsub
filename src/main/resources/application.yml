@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: rabbitmq-pubsub
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      driver-class-name: org.h2.Driver
+      jdbc-url: jdbc:h2:mem:pubdb
+      username: sa
+      password: password
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: user
+    password: bitnami
+
+logging:
+  level:
+    root: INFO
+    com:
+      codechallenge:
+        rabbitpubsub: INFO
